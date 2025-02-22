@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:balde_audio/providers/audio_provider.dart';
-import '../models/song.dart';
 
 class SongList extends StatelessWidget {
   const SongList({Key? key}) : super(key: key);

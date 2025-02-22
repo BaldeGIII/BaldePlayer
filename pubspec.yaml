@@ -38,7 +38,8 @@ dependencies:
   sqflite: ^2.0.3 # For SQLite database
   permission_handler: ^10.0.0 # For handling permissions
   file_picker: ^5.0.1 # For selecting files from the device
-
+  uuid: ^4.2.1 # For generating unique IDs
+  
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8

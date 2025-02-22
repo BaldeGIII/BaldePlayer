@@ -68,4 +68,33 @@ class SongRepository {
     );
     return List.generate(maps.length, (i) => Song.fromMap(maps[i]));
   }
+
+  Future<List<Song>> getSortedSongs(String sortBy) async {
+    Database db = await database;
+    List<Map<String, dynamic>> maps = await db.query(
+      tableName,
+      orderBy: sortBy,
+    );
+    return List.generate(maps.length, (i) => Song.fromMap(maps[i]));
+  }
+
+  Future<List<Song>> getSongsByArtist(String artist) async {
+    Database db = await database;
+    List<Map<String, dynamic>> maps = await db.query(
+      tableName,
+      where: 'artist = ?',
+      whereArgs: [artist],
+    );
+    return List.generate(maps.length, (i) => Song.fromMap(maps[i]));
+  }
+
+  Future<List<Song>> getSongsByAlbum(String album) async {
+    Database db = await database;
+    List<Map<String, dynamic>> maps = await db.query(
+      tableName,
+      where: 'album = ?',
+      whereArgs: [album],
+    );
+    return List.generate(maps.length, (i) => Song.fromMap(maps[i]));
+  }
 }
